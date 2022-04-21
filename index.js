@@ -15,13 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById("box3").value = newArray[2];
     }))
 
-    document.getElementById("powerBtn").addEventListener("click", (function() { 
-        let newArray = origArray.map(toPower);
-
-        document.getElementById("box1").value = newArray[0];
-        document.getElementById("box2").value = newArray[1];
-        document.getElementById("box3").value = newArray[2];
-    }))
+    document.getElementById("powerBtn").addEventListener("click", powerFunc); 
 
 })
 
@@ -40,6 +34,15 @@ function toSquare(value) {
 // anonymous function
 let toCube = function(value) {
     return Math.pow(value, 3);
+}
+
+function powerFunc() {
+    let newArray = origArray.map(toPower);
+
+    document.getElementById("box1").value = newArray[0];
+    document.getElementById("box2").value = newArray[1];
+    document.getElementById("box3").value = newArray[2];
+
 }
 
 function toPower(value) {
